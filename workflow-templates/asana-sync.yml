@@ -11,6 +11,6 @@ jobs:
       - name: Send Event to Firebase
         uses: satak/webrequest-action@master
         with:
-          url: https://us-central1-bb-sync.cloudfunctions.net/app/webhooks/github/new-pr
+          url: ${{ secrets.BBSyncNewPRURL }}
           method: POST
           payload: ${{ toJson(github.event.pull_request) }}
