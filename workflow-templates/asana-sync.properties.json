@@ -1,0 +1,5 @@
+{
+    "name": "BB-Sync: Sync PR URL to Asana Task",
+    "description": "On each new PR Creation if the head branch has a pattern matching */BB-{ID} or */bb-{id}. The URL for the HTML gets commented on the Asana task with the matching BB-ID",
+    "iconName": "example-icon",
+}
