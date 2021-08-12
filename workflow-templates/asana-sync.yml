@@ -1,0 +1,16 @@
+name: Asana PR Link - BB Sync
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  bb-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Event to Firebase
+        uses: satak/webrequest-action@master
+        with:
+          url: https://us-central1-bb-sync.cloudfunctions.net/app/webhooks/github/new-pr
+          method: POST
+          payload: ${{ toJson(github.event.pull_request) }}
